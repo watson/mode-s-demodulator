@@ -56,7 +56,7 @@ function Message () {
   this.tflag = null                  // UTC synchronized?
   this.rawLatitude = null            // Non decoded latitude
   this.rawLongitude = null           // Non decoded longitude
-  this.flight = new Int8Array(8)     // 8 chars flight number.
+  this.flight = new Array(8)         // 8 chars flight number.
   this.ewDir = null                  // 0 = East, 1 = West.
   this.ewVelocity = null             // E/W velocity.
   this.nsDir = null                  // 0 = North, 1 = South.
