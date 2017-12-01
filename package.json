@@ -1,6 +1,6 @@
 {
   "name": "mode-s-decoder",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "A Node.js module for decoding Mode S / ADS-B messages from aviation aircrafts",
   "main": "index.js",
   "dependencies": {},
@@ -32,5 +32,9 @@
   "bugs": {
     "url": "https://github.com/watson/mode-s-decoder/issues"
   },
-  "homepage": "https://github.com/watson/mode-s-decoder#readme"
+  "homepage": "https://github.com/watson/mode-s-decoder#readme",
+  "coordinates": [
+    48.9062802,
+    2.3598659
+  ]
 }
