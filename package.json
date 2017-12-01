@@ -1,0 +1,36 @@
+{
+  "name": "mode-s-decoder",
+  "version": "0.0.0",
+  "description": "A Node.js module for decoding Mode S / ADS-B messages from aviation aircrafts",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "standard": "^10.0.3",
+    "tape": "^4.8.0"
+  },
+  "scripts": {
+    "test": "standard"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/watson/mode-s-decoder.git"
+  },
+  "keywords": [
+    "modes",
+    "mode-s",
+    "sdr",
+    "decode",
+    "decoder",
+    "ads-b",
+    "adsb",
+    "radio",
+    "aircraft",
+    "plane"
+  ],
+  "author": "Thomas Watson <w@tson.dk> (https://twitter.com/wa7son)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/watson/mode-s-decoder/issues"
+  },
+  "homepage": "https://github.com/watson/mode-s-decoder#readme"
+}
