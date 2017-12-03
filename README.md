@@ -37,6 +37,13 @@ Initialize the state object (used as an argument to other functions).
 - `callback` - Called every time a new message is detected. Will be
   called with two arguemnts: `state` and `message`
 
+## Acknowledgement
+
+This project is a JavaScript port of the popular
+[dump1090](https://github.com/antirez/dump1090) project by Salvatore
+Sanfilippo. It modularizes the code into separate functions and removes
+all non-essentials, so that only the decoding logic is left.
+
 ## License
 
 MIT
