@@ -246,7 +246,7 @@ function fixTwoBitsErrors (msg, bits) {
 // that is assumed to be a power of two.
 //
 // FIXME: This doesn't give the exact same result as its C counterpart as the C
-// version operates on tru uint8_t numbers. But it's pretty close... seems to
+// version operates on true uint8_t numbers. But it's pretty close... seems to
 // just be off by one. I.e. if a = 4566061, then the return value is 100, but
 // it should be 101
 function icaoCacheHasAddr (a) {
