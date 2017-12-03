@@ -12,6 +12,8 @@ const FULL_LEN = PREAMBLE_US + LONG_MSG_BITS
 
 const ICAO_CACHE_TTL = 60   // Time to live of cached addresses.
 
+const AIS_CHARSET = '?ABCDEFGHIJKLMNOPQRSTUVWXYZ????? ???????????????0123456789??????'
+
 const maglut = new Uint16Array(129 * 129 * 2)
 let maglutInitialized = false
 
@@ -22,12 +24,6 @@ exports.decode = decode
 
 exports.UNIT_FEET = UNIT_FEET
 exports.UNIT_METERS = UNIT_METERS
-
-function memcpy (dst, dstOffset, src, srcOffset, length) {
-  for (let i = srcOffset; i < length; i++) {
-    dst[dstOffset + i] = src[i]
-  }
-}
 
 // The struct we use to store information about a decoded message
 function Message () {
@@ -375,8 +371,6 @@ function decodeAc12Field (msg) {
   }
 }
 
-const aisCharset = '?ABCDEFGHIJKLMNOPQRSTUVWXYZ????? ???????????????0123456789??????'
-
 // Decode a raw Mode S message demodulated as a stream of bytes by
 // detect(), and split it into fields populating a Message object.
 function decode (self, mm, msg) {
@@ -493,14 +487,14 @@ function decode (self, mm, msg) {
     if (mm.metype >= 1 && mm.metype <= 4) {
       // Aircraft Identification and Category
       mm.aircraftType = mm.metype - 1
-      mm.flight[0] = (aisCharset)[msg[5] >> 2]
-      mm.flight[1] = aisCharset[((msg[5] & 3) << 4) | (msg[6] >> 4)]
-      mm.flight[2] = aisCharset[((msg[6] & 15) << 2) | (msg[7] >> 6)]
-      mm.flight[3] = aisCharset[msg[7] & 63]
-      mm.flight[4] = aisCharset[msg[8] >> 2]
-      mm.flight[5] = aisCharset[((msg[8] & 3) << 4) | (msg[9] >> 4)]
-      mm.flight[6] = aisCharset[((msg[9] & 15) << 2) | (msg[10] >> 6)]
-      mm.flight[7] = aisCharset[msg[10] & 63]
+      mm.flight[0] = (AIS_CHARSET)[msg[5] >> 2]
+      mm.flight[1] = AIS_CHARSET[((msg[5] & 3) << 4) | (msg[6] >> 4)]
+      mm.flight[2] = AIS_CHARSET[((msg[6] & 15) << 2) | (msg[7] >> 6)]
+      mm.flight[3] = AIS_CHARSET[msg[7] & 63]
+      mm.flight[4] = AIS_CHARSET[msg[8] >> 2]
+      mm.flight[5] = AIS_CHARSET[((msg[8] & 3) << 4) | (msg[9] >> 4)]
+      mm.flight[6] = AIS_CHARSET[((msg[9] & 15) << 2) | (msg[10] >> 6)]
+      mm.flight[7] = AIS_CHARSET[msg[10] & 63]
     } else if (mm.metype >= 9 && mm.metype <= 18) {
       // Airborne position Message
       mm.fflag = msg[6] & (1 << 2)
@@ -809,5 +803,11 @@ function detect (self, mag, maglen, cb) {
     } else {
       useCorrection = false
     }
+  }
+}
+
+function memcpy (dst, dstOffset, src, srcOffset, length) {
+  for (let i = srcOffset; i < length; i++) {
+    dst[dstOffset + i] = src[i]
   }
 }
