@@ -1,6 +1,6 @@
 # mode-s-decoder
 
-A Node.js module for decoding Mode S / ADS-B messages from aviation
+A JavaScript module for decoding Mode S / ADS-B messages from aviation
 aircrafts.
 
 ## Installation

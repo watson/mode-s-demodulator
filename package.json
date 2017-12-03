@@ -1,7 +1,7 @@
 {
   "name": "mode-s-decoder",
   "version": "0.1.0",
-  "description": "A Node.js module for decoding Mode S / ADS-B messages from aviation aircrafts",
+  "description": "A JavaScript module for decoding Mode S / ADS-B messages from aviation aircrafts",
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
