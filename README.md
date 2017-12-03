@@ -3,6 +3,8 @@
 A JavaScript module for decoding Mode S / ADS-B messages from aviation
 aircrafts.
 
+[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
+
 ## Installation
 
 ```
