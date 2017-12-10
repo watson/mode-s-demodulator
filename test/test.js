@@ -40,7 +40,8 @@ test(function (t) {
   })
 
   function onMsg (msg) {
-    const msghex = Buffer.from(msg.msg.buffer, 0, msg.msgbits / 8).toString('hex')
+    // Use slice because Buffer.from(arrayBuffer, byteOffset, length) wasn't added until Node.js 5.10.0
+    const msghex = Buffer.from(msg.msg.buffer.slice(0, msg.msgbits / 8)).toString('hex')
     t.equal(msghex, messages.shift())
   }
 })
