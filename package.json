@@ -12,7 +12,9 @@
     "tape": "^4.8.0"
   },
   "scripts": {
-    "test": "standard"
+    "pretest": "./test/pretest.sh",
+    "test": "standard && node test/test.js",
+    "clean": "rm test/fixture.bin"
   },
   "repository": {
     "type": "git",
