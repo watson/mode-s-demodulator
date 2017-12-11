@@ -1,6 +1,6 @@
 {
   "name": "mode-s-demodulator",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A JavaScript module for demodulating and decoding Mode S / ADS-B messages from aviation aircrafts",
   "main": "index.js",
   "dependencies": {
@@ -48,7 +48,7 @@
   },
   "homepage": "https://github.com/watson/mode-s-demodulator#readme",
   "coordinates": [
-    55.777594,
-    12.589834
+    55.777706,
+    12.590256
   ]
 }
